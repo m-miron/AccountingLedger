@@ -23,23 +23,14 @@ public class LedgerApp {
         );
         String uInput = userInput.nextLine();
         switch (uInput) {
-            case "D":
-                addDeposit();
-                break;
-            case "P":
-                makePayment();
-                break;
-            case "L":
-                viewLedger();
-                break;
-            case "X":
-                System.out.println("Thank you!");
-                break;
-
+            case "D" -> addDeposit();
+            case "P" -> addPayment();
+            case "L" -> viewLedger();
+            case "X" -> System.out.println("Thank you!");
         }
     }
 
-    public static void addDeposit() {
+    public static void addDeposit() { //To add deposit.
         Scanner userInput = new Scanner(System.in);
         System.out.println("Enter Date. YYYY-MM-DD");
         String date = userInput.nextLine();
@@ -69,7 +60,7 @@ public class LedgerApp {
 
     }
 
-    public static void makePayment() {
+    public static void addPayment() { //To add payment
         Scanner userInput = new Scanner(System.in);
         System.out.println("Enter Date. YYYY-MM-DD");
         String date = userInput.nextLine();
@@ -98,7 +89,49 @@ public class LedgerApp {
         }
     }
 
-    public static void viewLedger() {
+    public static void viewLedger() { //To view ledger.
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("""
+                Please enter an option below:
+                [A] All Entries
+                [D] Deposits
+                [P] Payments
+                [R] Reports
+                [H] Home
+                """);
+
+        String uInput = userInput.nextLine();
+        switch (uInput.toUpperCase()) {
+            case "A":
+                viewAll();
+            case "D":
+                viewDeposits();
+            case "P":
+                viewPayments();
+            case "R":
+                viewReports();
+            case "H":
+                LedgerApp.viewHomeScreen();
+            default:
+                System.out.println("Please enter a valid option.");
+                break;
+        }
+    }
+
+    public static void viewAll() {
+    }
+
+    public static void viewDeposits() {
 
     }
+
+    public static void viewPayments() {
+
+    }
+
+    public static void viewReports() {
+
+    }
+
 }
+
