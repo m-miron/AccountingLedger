@@ -4,6 +4,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+import static org.yu.practice.Transactions.transactionList;
+
 public class LedgerApp {
 
 
@@ -118,7 +120,18 @@ public class LedgerApp {
         }
     }
 
+
     public static void viewAll() {
+        System.out.println("All Transactions: ");
+        for (Transaction entry : transactionList) {
+            System.out.println(
+                    entry.getDate() + " " +
+                            entry.getTime() + " " +
+                            entry.getDescription() + " " +
+                            entry.getVendor() + " " +
+                            entry.getAmount()
+            );
+        }
     }
 
     public static void viewDeposits() {
