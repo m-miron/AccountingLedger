@@ -2,15 +2,18 @@ package org.yu.practice;
 
 import java.util.Scanner;
 
-public class MainMenu {
+public class MainMenu {//For program entry point
 
-    public static void main(String[] args) {//Personal note:To define the main method.
-        viewHomeScreen();
+    public static void main(String[] args) {
+        viewHomeScreen();//Calls on method that will display home screen to user.
     }
-    public static void viewHomeScreen() {//This is the home page for the user
+
+    public static void viewHomeScreen() {
+
         Scanner userInput = new Scanner(System.in);
+        //Initialized to control loop for application's exit
         boolean exitApp = false;
-        while (!exitApp) {
+        while (!exitApp) {//To loop through menu options until user wishes to exit,
             System.out.println("""
                             
                             ACCOUNT MENU
@@ -19,11 +22,12 @@ public class MainMenu {
                     [P] Make Payment (Debit)
                     [L] Ledger
                     [X] Exit
-                    
+                                        
                     Please enter a bracket [] option (letter only).
                     Option: \s""");
-            String uInput = userInput.nextLine();
-            /* To switch from main menu to users selection from main menu
+            String uInput = userInput.nextLine();//To read user's input
+
+            /* To perform users input from main menu
             (no matter the case that they input):
             */
             switch (uInput.toUpperCase()) {
@@ -34,15 +38,12 @@ public class MainMenu {
                     System.out.println("Thank you!");
                     exitApp = true;
                 }
-                default -> invalidEntry();//For when the user enters an invalid option. Loops back to home menu.
+                default ->
+                        System.out.println("Invalid entry. Please try again.\n");//For when the user enters an invalid option. Loops back to home menu.
             }
         }
     }
 
-    public static void invalidEntry() {
-        System.out.println("Invalid entry. Please try again.\n");
-        viewHomeScreen();
-    }
 
 }
 

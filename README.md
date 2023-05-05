@@ -20,6 +20,7 @@ and open with IDE software, like IntelliJ.
 
 From there you can follow this path to the main file of this application:
 AccountingLedger/src/main/java/org/yu/practice/MainMenu.java
+
 ![Main File Directory](/MainFileScreenshot.png)
 
 Then, you can run the MainMenu java file which will set off the run terminal to pop up.
@@ -34,6 +35,7 @@ There are three (3) screens in this application:
 * Reports Screen
 
 #### Home Screen
+
 ![Main Menu Screen](/MainMenuScreen.png)
 
 Will display the Main Menu screen that will include the selection options:
@@ -42,7 +44,9 @@ Will display the Main Menu screen that will include the selection options:
 user to enter the deposit's description, payer name, and deposit amount. Meanwhile, 
 the date and time will be auto-generated and this information along with the user's input
 will be saved into a transactions.csv file.
-  ![Add Deposit Example](/AddDepositsExample.png)
+
+![Add Deposit Example](/AddDepositsExample.png)
+
     - Adding a deposit is meant for credit (or positive transactions) to the user's
 financial account. It will add more funds to the ledgers. 
 
@@ -50,7 +54,9 @@ financial account. It will add more funds to the ledgers.
 there will be more prompts that will allow the user to enter the payment's description, payee name, and deposit amount. 
 Meanwhile, the date and time will be auto-generated and this information along with the user's input
 will be saved into a transactions.csv file.
-  ![Make Payment Example](/MakePaymentExample.png)
+
+![Make Payment Example](/MakePaymentExample.png)
+
   - Making a payment will deduct from the funds being tracked and is meant for debit
     (or negative transactions) to the user's financial account.
 
@@ -58,6 +64,7 @@ will be saved into a transactions.csv file.
 *__Exit__ by typing "x" or "X", when prompted. This will exit the application.
 
 #### Ledger Screen
+
 ![Ledger Screen](/LedgerScreen.png)
 
 Will display the Ledger screen that will include the selection options:
@@ -73,6 +80,7 @@ transactions only.
 
 
 ##### Reports Screen
+
 ![Report Screen](/ReportsScreen.png)
 
 Will display the Reports screen that will include the report selection options:
@@ -90,6 +98,13 @@ which will generate a transaction list report of all transactions that match the
 
 ### Additional Details
 #### Known Bugs
+Error handling will not apply to invalid entries in:
+* __Add Deposit__
+* __Make Payment__
+* __Search by Vendor__
+
+I am actively working on patching this up!
+
 #### File: transactions1.csv
 This file can be located under the AccountingLedger directory, and it is where all 
 transactions are saved into and where the transaction lists are generated from. 

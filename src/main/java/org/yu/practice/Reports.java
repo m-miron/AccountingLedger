@@ -1,5 +1,4 @@
 package org.yu.practice;
-/**/
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -8,7 +7,7 @@ public class Reports {
 
     public static Scanner userInput = new Scanner(System.in);
 
-    public static void viewReports() {
+    public static void viewReports() {//To view reports.
         System.out.println("""
                         
                         REPORTS MENU
@@ -19,14 +18,14 @@ public class Reports {
                 [4] Previous Year
                 [5] Search by Vendor
                 [0] Back
-                
+                                
                 Please enter a bracket [] option (number only).
                     Option: \s""");
 
         int uInput = userInput.nextInt();
         userInput.nextLine();
 
-        switch (uInput) {
+        switch (uInput) {// To perform users input from reports menu (no matter the case that they input):
             case 1 -> monthToDateReport();
             case 2 -> previousMonthReport();
             case 3 -> yearToDateReport();
@@ -34,7 +33,7 @@ public class Reports {
             case 5 -> searchByVendorReport();
             case 0 -> {
             }
-            default -> invalidEntry();
+            default -> System.out.println("Invalid entry. Please try again.\n");
         }
     }
 
@@ -150,10 +149,6 @@ public class Reports {
                 System.err.println("No transactions found for vendor: " + vendorName);
             }
         }
-    }
-    public static void invalidEntry() {
-        System.out.println("Invalid entry. Please try again.\n");
-        viewReports();
     }
 
 }
