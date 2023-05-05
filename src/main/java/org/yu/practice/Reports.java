@@ -9,7 +9,6 @@ public class Reports {
     public static Scanner userInput = new Scanner(System.in);
 
     public static void viewReports() {
-//        ArrayList<Transaction> transactions = new ArrayList<Transaction>();
         System.out.println("""
                         REPORTS MENU
                                 
@@ -19,6 +18,7 @@ public class Reports {
                 [4] Previous Year
                 [5] Search by Vendor
                 [0] Back
+                
                 Please enter a bracket [] option (number only).
                     Option: \s""");
 
@@ -33,7 +33,7 @@ public class Reports {
             case 5 -> searchByVendorReport();
             case 0 -> {
             }
-            default -> System.out.println("Invalid entry. Please try again.\n");
+            default -> invalidEntry();
         }
     }
 
@@ -150,6 +150,9 @@ public class Reports {
             }
         }
     }
-
+    public static void invalidEntry() {
+        System.out.println("Invalid entry. Please try again.\n");
+        viewReports();
+    }
 
 }

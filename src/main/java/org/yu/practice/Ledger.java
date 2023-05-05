@@ -18,12 +18,13 @@ public class Ledger {
             System.out.println("""
                             
                             LEDGER MENU
-                    
+                                        
                     [A] All Transactions
                     [D] Deposits Only
                     [P] Payments Only
                     [R] Reports
                     [H] Home
+                                        
                     Please enter a bracket [] option (letter only).
                     Option: \s
                     """);
@@ -37,7 +38,7 @@ public class Ledger {
                 case "H" -> {
                     return;
                 }
-                default -> System.out.println("Invalid entry. Please try again.\n");
+                default -> invalidEntry();
             }
         }
     }
@@ -89,10 +90,10 @@ public class Ledger {
 
             System.out.printf("%-15s %-15s %-35s %-35s $%-25.2f\n",
                     entry.getDate(),
-                            entry.getTime(),
-                            entry.getDescription(),
-                            entry.getVendor(),
-                            entry.getAmount());
+                    entry.getTime(),
+                    entry.getDescription(),
+                    entry.getVendor(),
+                    entry.getAmount());
         }
     }
 
@@ -118,7 +119,6 @@ public class Ledger {
     }
 
     public static void viewPayments() { //To print payments only.
-//        System.out.println("\n      PAYMENTS        \n");
         System.out.println("""
                 -----------------------------------------------------------------------------------------------------------------                                               \s
                                                                 PAYMENTS
@@ -138,5 +138,9 @@ public class Ledger {
         }
     }
 
+    public static void invalidEntry() {
+        System.out.println("Invalid entry. Please try again.\n");
+        viewLedger();
+    }
 
 }

@@ -37,7 +37,6 @@ public class MainMenu {
                 default -> invalidEntry();//For when the user enters an invalid option. Loops back to home menu.
             }
         }
-        System.exit(0);
     }
 
     public static void invalidEntry() {
