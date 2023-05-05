@@ -37,8 +37,7 @@ public class Ledger {
                 case "D" -> viewDeposits();//To view deposits only
                 case "P" -> viewPayments();//To view payments only
                 case "R" -> Reports.viewReports();//To view reports menu screen
-                case "H" -> {
-                    return;
+                case "H" -> {return;
                 }
                 //For when the user enters an invalid option. Loops back to ledger menu.
                 default -> System.out.println("Invalid entry. Please try again.\n");

@@ -37,7 +37,7 @@ public class Transactions {//For creation of transactions(i.e. add deposits or m
                 System.out.println("Input Error: Cannot write into existing file." + e.getMessage());
             }
             //Return to main menu screen. Recursion?
-            MainMenu.viewHomeScreen();
+//            MainMenu.viewHomeScreen();
     }
     public static void addPayment() {
 
@@ -64,8 +64,6 @@ public class Transactions {//For creation of transactions(i.e. add deposits or m
         } catch (IOException e){
             System.out.println("Input Error: Cannot write into existing file." + e.getMessage());
         }
-        //Return to main menu screen. Recursion?
-        MainMenu.viewHomeScreen();
     }
 
 }
