@@ -17,11 +17,11 @@ public class Transactions {
             String time = rightNow.format(timeFormat);
             //To prompt user to enter the description, payer and the amount of the new deposit.
             System.out.println("Let's add a new deposit.");
-            System.out.println("Enter a description for the deposit. \nExample: Tax Refund");
+            System.out.println("Enter a description for the deposit. \nExample: Tax Refund \nEnter:");
             String description = userInput.nextLine();
-            System.out.println("Enter the name of the payer. \nContinued Example: IRS");
+            System.out.println("Enter the name of the payer. \nContinued Example: IRS \nEnter: ");
             String vendor = userInput.nextLine();
-            System.out.println("Enter the amount of the deposit. \nExample: 250.00 ");
+            System.out.println("Enter the amount of the deposit. \nExample: 250.00 \nEnter: ");
             double amount = userInput.nextDouble();
             userInput.nextLine();
 
@@ -45,11 +45,12 @@ public class Transactions {
         String time = rightNow.format(timeFormat);
 
         //To prompt user to enter the description, payer and the amount of the new payment.
-        System.out.println("Enter Payment Description: ");
+        System.out.println("Let's add a new payment.");
+        System.out.println("Enter a description for the payment. \nExample: Rent \nEnter: ");
         String description =userInput.nextLine();
-        System.out.println("Enter Payee: ");
+        System.out.println("Enter the name of the payee. \nContinued Example: Landlord Tom \nEnter: ");
         String vendor = userInput.nextLine();
-        System.out.println("Enter Payment Amount: ");
+        System.out.println("Enter the amount of the deposit. \nExample: 250.00 \nEnter: ");
         double amount = userInput.nextDouble();
         userInput.nextLine();
 

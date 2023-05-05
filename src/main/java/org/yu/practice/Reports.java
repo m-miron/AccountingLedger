@@ -10,6 +10,7 @@ public class Reports {
 
     public static void viewReports() {
         System.out.println("""
+                        
                         REPORTS MENU
                                 
                 [1] Month To Date

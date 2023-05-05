@@ -97,8 +97,7 @@ public class Ledger {
         }
     }
 
-    public static void viewDeposits() {
-        System.out.print("\n        DEPOSITS       \n");
+    public static void viewDeposits() {//To print deposits only.
         System.out.println("""
                 -----------------------------------------------------------------------------------------------------------------                                               \s
                                                                 DEPOSITS
