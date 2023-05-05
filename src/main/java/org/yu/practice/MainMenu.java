@@ -1,32 +1,34 @@
 package org.yu.practice;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class MainMenu {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) {//Personal note:To define the main method.
         viewHomeScreen();
     }
-
-    public static void viewHomeScreen() {
+    public static void viewHomeScreen() {//This is the home page for the user
         Scanner userInput = new Scanner(System.in);
         boolean exitApp = false;
         while (!exitApp) {
             System.out.println("""
-                    ACCOUNT LEDGER
-                    Please select an option:\s
+                            
+                            ACCOUNT MENU
+                            
                     [D] Add Deposit (Credit)
                     [P] Make Payment (Debit)
                     [L] Ledger
-                    [X] Exit\s""");
+                    [X] Exit
+                    
+                    Please enter a bracket [] option (letter only).
+                    Option: \s""");
             String uInput = userInput.nextLine();
-            //Displays add deposit, add payment, ledger, or exit on the screen for user to see.
+            /* To switch from main menu to users selection from main menu
+            (no matter the case that they input):
+            */
             switch (uInput.toUpperCase()) {
-                case "D" -> Transactions.viewDeposits();
-                case "P" -> Transactions.viewPayments();
+                case "D" -> Transactions.addDeposit();
+                case "P" -> Transactions.addPayment();
                 case "L" -> Ledger.viewLedger();
                 case "X" -> {
                     System.out.println("Thank you!");
@@ -35,7 +37,7 @@ public class MainMenu {
                 default -> invalidEntry();//For when the user enters an invalid option. Loops back to home menu.
             }
         }
-        return;
+        System.exit(0);
     }
 
     public static void invalidEntry() {
